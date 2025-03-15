@@ -110,7 +110,7 @@ class PlanetWarsEnv(gym.Env):
             if not agent_alive:
                 reward += -100 + (50 * (100 / self.current_turn))# Agent lost
             elif not enemy_alive:
-                reward += 100 + (50 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 75 * (self.planets_opponent_lost / self.max_enemy_planets) # Enemy eliminated
+                reward += 100 + (50 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets) # Enemy eliminated
                 win = True
             elif self.current_turn >= self.max_turns:
                 # Timeout: determine win by total ships.
