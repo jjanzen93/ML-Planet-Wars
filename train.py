@@ -18,8 +18,10 @@ def plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list):
     plt.legend()
 
     plt.tight_layout()
+
+def display_plot(time):
     plt.show(block=False)
-    plt.pause(30)
+    plt.pause(time)
     plt.close()
 
 def main():
@@ -54,6 +56,8 @@ def main():
         # Track episodes
         episode_count += len(env.episode_results)
 
+        plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list)
+
         if len(env.episode_results) >= 20:
             recent_win_rate = sum(env.episode_results[-20:]) / 20.0
             winrate_list.append(recent_win_rate)
@@ -61,8 +65,8 @@ def main():
             print(f"Recent win rate over last 20 episodes: {recent_win_rate*100:.1f}%")
             env.episode_results.clear()
 
-            # Plot every 20 episodes
-            plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list)
+            # Plot every 20 episodes for 30 seconds
+            display_plot(10)
 
             if recent_win_rate >= 0.80:
                 snapshot_file = "snapshot_model.zip"
@@ -73,7 +77,8 @@ def main():
 
     model.save("ppo_planet_wars3")
     env.close()
-    plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list)
+
 
 if __name__ == "__main__":
     main()
+    plt.show(block=True)
