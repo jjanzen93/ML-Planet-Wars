@@ -27,8 +27,7 @@ def display_plot(time):
 def main():
     env = PlanetWarsEnv(max_turns=1000, opponent_model=None, visualize=True)
     model = PPO("MlpPolicy", env, verbose=1)
-
-    opponent_model = PPO.load("ppo_planet_wars1", env=env)
+    opponent_model = PPO.load("ppo_planet_wars2", env=env)
     env.opponent_model = opponent_model
     total_timesteps = 100000
     timesteps_per_iter = 10000
@@ -75,7 +74,7 @@ def main():
                 env.opponent_model = opponent_model
                 print("Opponent updated to current model snapshot!")
 
-    model.save("ppo_planet_wars3")
+    model.save("ppo_planet_wars5")
     env.close()
 
 
