@@ -2,7 +2,9 @@ from stable_baselines3 import PPO
 from planet_wars_env import PlanetWarsEnv
 import matplotlib.pyplot as plt
 import time
-
+from sb3_contrib.common.wrappers import ActionMasker
+from sb3_contrib.ppo_mask import MaskablePPO
+"""
 def plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list, reward_mean_list):
     plt.figure(figsize=(10, 5))
     plt.subplot(3, 1, 1)
@@ -23,16 +25,17 @@ def plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list, re
     plt.ylabel("Mean Reward")
     plt.legend()
 
-    plt.tight_layout()
+    plt.tight_layout()"""
 
 
 def main():
     env = PlanetWarsEnv(max_turns=1000, opponent_model=None, visualize=True)
-    model = PPO("MlpPolicy", env, verbose=1)
-    opponent_model = PPO.load("ppo_planet_wars2", env=env)
+    model = MaskablePPO("MlpPolicy", env, verbose=1, gamma = 0.9995,device = "cpu", tensorboard_log="./ppo_multiagent_tensorboard/")
+    model.save("multi_ppo_untrained")
+    opponent_model = MaskablePPO.load("multi_ppo_untrained", env=env, gamma = 0.9995,device = "cpu")
     env.opponent_model = opponent_model
-    total_timesteps = 100000
-    timesteps_per_iter = 10000
+    total_timesteps = 10000000
+    timesteps_per_iter = 50000
     timesteps = 0
     episode_count = 0
 
@@ -66,7 +69,7 @@ def main():
         reward_mean_list.append(reward_mean)
         episode_count_list.append(episode_count)  # Track the episode count
 
-        plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list, reward_mean_list)
+        #plot_metrics(timesteps_list, loss_list, episode_count_list, winrate_list, reward_mean_list)
 
         if len(env.episode_results) >= 20:
             recent_win_rate = sum(env.episode_results[-20:]) / 20.0
@@ -74,9 +77,9 @@ def main():
             env.episode_results.clear()
 
             # Display plot every 20 episodes for 30 seconds
-            plt.show(block=False)
-            plt.pause(30)
-            plt.close()
+            #plt.show(block=False)
+            #plt.pause(30)
+            #plt.close()
 
             if recent_win_rate >= 0.80:
                 snapshot_file = "snapshot_model.zip"

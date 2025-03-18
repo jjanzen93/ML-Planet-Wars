@@ -38,12 +38,12 @@ class Visualizer:
             if planet.Owner() == 0:
                 color = (128, 128, 128)  # neutral: gray
             elif planet.Owner() == 1:
-                color = (0, 0, 255)      # agent: blue
+                color = (91, 184, 227)      # agent: blue
             elif planet.Owner() == 2:
-                color = (255, 0, 0)      # enemy: red
+                color = (227, 91, 111)      # enemy: red
             else:
                 color = (255, 255, 255)
-            radius = max(10, int(math.log(planet.NumShips() + 1) * 3))
+            radius = (planet.GrowthRate() + 3) * 2
             pygame.draw.circle(self.screen, color, (x, y), radius)
             text = self.font.render(str(planet.NumShips()), True, (255, 255, 255))
             self.screen.blit(text, (x - text.get_width() // 2, y - text.get_height() // 2))
@@ -63,12 +63,12 @@ class Visualizer:
             if fleet.Owner() == 0:
                 color = (128, 128, 128)
             elif fleet.Owner() == 1:
-                color = (0, 0, 255)
+                color = (91, 184, 227)
             elif fleet.Owner() == 2:
-                color = (255, 0, 0)
+                color = (227, 91, 111)
             else:
                 color = (255, 255, 255)
-            pygame.draw.circle(self.screen, color, (x, y), 5)
+            pygame.draw.circle(self.screen, color, (x, y), 6)
         
         # Display current turn (if available) and current simulation FPS.
         if hasattr(env, 'current_turn'):
