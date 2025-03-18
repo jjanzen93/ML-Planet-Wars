@@ -68,9 +68,12 @@ class PlanetWarsEnv(gym.Env):
         # Prepare observation for opponent: flip the owner labels.
         obs = self._get_obs()  # original observation from the agent's perspective
         if self.opponent_model is not None:
-            flipped_obs = self._flip_obs(obs)
-            opp_action, _ = self.opponent_model.predict(flipped_obs, deterministic=False)
-            self._process_action(opp_action, player=2)
+            try:
+                self.opponent_model.do_turn(self.pw)
+            except:
+                flipped_obs = self._flip_obs(obs)
+                opp_action, _ = self.opponent_model.predict(flipped_obs, deterministic=False)
+                self._process_action(opp_action, player=2)
             #print(obs)
             #print(flipped_obs)
             #print("AGENT:", action)
@@ -82,13 +85,18 @@ class PlanetWarsEnv(gym.Env):
         current_score = self._compute_score()
         src, dst, frac = action
         fraction = frac / 10.0
-        if self.pw._planets[dst].NumShips() > self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() != 1:
+        distance = self.pw.Distance(src, dst)
+        if self.pw._planets[dst].NumShips() + self.pw._planets[dst].GrowthRate() * distance > self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 2:
             current_score -= 10
-        elif self.pw._planets[dst].NumShips() < self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() != 1:
+        elif self.pw._planets[dst].NumShips() + self.pw._planets[dst].GrowthRate() * distance < self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 2:
+            current_score += 10
+        if self.pw._planets[dst].NumShips() > self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 0:
+            current_score -= 10
+        elif self.pw._planets[dst].NumShips() < self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 0:
             current_score += 10
         if self.pw._planets[dst].GrowthRate() < 1 and self.pw._planets[dst].Owner != 1:
             current_score -= 10
-        elif self.pw._planets[dst].GrowthRate() > 1 and self.pw._planets[dst].Owner != 1:
+        elif self.pw._planets[dst].GrowthRate() >= 1 and self.pw._planets[dst].Owner != 1:
             current_score += 10
         if valid_move:
             current_score += 10
