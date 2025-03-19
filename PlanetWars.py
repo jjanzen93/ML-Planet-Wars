@@ -124,6 +124,14 @@ class PlanetWars:
                 continue
             r.append(p)
         return r
+    
+    def NotEnemyPlanets(self):
+        r = []
+        for p in self._planets:
+            if p.Owner() == 2:
+                continue
+            r.append(p)
+        return r
 
     def Fleets(self):
         return self._fleets
@@ -162,10 +170,15 @@ class PlanetWars:
         dy = source.Y() - destination.Y()
         return int(ceil(sqrt(dx * dx + dy * dy)))
 
-    def IssueOrder(self, source_planet, destination_planet, num_ships):
-        stdout.write("%d %d %d\n" %
-                     (source_planet, destination_planet, num_ships))
-        stdout.flush()
+    def IssueOrder(self, source_planet, destination_planet, num_ships, player=2):
+        planets = self.Planets()
+        planets[source_planet].RemoveShips(num_ships)
+        trip_length = self.Distance(source_planet, destination_planet)
+        new_fleet = Fleet(player, num_ships, source_planet, destination_planet, trip_length, trip_length)
+        self._fleets.append(new_fleet)
+        #stdout.write("%d %d %d\n" %
+        #             (source_planet, destination_planet, num_ships))
+        #stdout.flush()
 
     def IsAlive(self, player_id):
         for p in self._planets:

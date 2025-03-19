@@ -75,24 +75,31 @@ class PlanetWarsEnv(gym.Env):
         #print(self.pppq)
         #print(self.oppq)
         src = self.src
-        new_surplus = self._process_action(src, dst, self.surplus, player=1)
+        new_surplus, fleet_size = self._process_action(src, dst, self.surplus, player=1)
         # make process action return new surplus
+
         if new_surplus:
             heapq.heappush(self.pppq, (new_surplus * -1, src))
         done = False
         while (not self.pppq) and (not done):
             # q empty, no more moves to make.
             # make opponents moves
-            while self.oppq:
-                opp_obs, opp_src, opp_surplus = self._get_opp_obs()
-                opp_action, _ = self.opponent_model.predict(opp_obs, deterministic=False)
-                #print(f"normal dst: {dst}\nopp action: {opp_action}")
-                new_surplus = self._opp_process_action(opp_src, opp_action, opp_surplus, player=2)
-                if new_surplus:
-                    heapq.heappush(self.oppq, (opp_surplus * -1, opp_src))
-            self._simulate_turn()
-            self.current_turn += 1
-            done = self._check_done()
+            try:
+                self.opponent_model.do_turn(self.pw)
+                self._simulate_turn()
+                self.current_turn += 1
+                done = self._check_done()
+            except:
+                while self.oppq:
+                    opp_obs, opp_src, opp_surplus = self._get_opp_obs()
+                    opp_action, _ = self.opponent_model.predict(opp_obs, deterministic=False)
+                    #print(f"normal dst: {dst}\nopp action: {opp_action}")
+                    new_surplus = self._opp_process_action(opp_src, opp_action, opp_surplus, player=2)
+                    if new_surplus:
+                        heapq.heappush(self.oppq, (opp_surplus * -1, opp_src))
+                self._simulate_turn()
+                self.current_turn += 1
+                done = self._check_done()
             
 
             # Check for terminal condition (one side is eliminated or max_turns reached)
@@ -115,12 +122,25 @@ class PlanetWarsEnv(gym.Env):
         #    current_score -= 10
         #elif self.pw._planets[dst].GrowthRate() > 1 and self.pw._planets[dst].Owner != 1:
         #    current_score += 10 * self.pw._planets[dst].GrowthRate()
+        
         reward = current_score - self.last_score
         self.last_score = current_score
+
         reward = 0
-        if dst != 23:
-            reward += (15 - self.distances[src][dst]) / 3000
-            reward += (self.pw._planets[dst]._growth_rate - 2.5) / 100
+        if dst != 23 and fleet_size > 0:
+            reward += 20 * (self.pw._planets[dst]._growth_rate / (self.pw._planets[dst].NumShips() + self.distances[src][dst]))
+            if fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size > self.pw._planets[dst].NumShips():
+                reward += 10
+            elif fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size <= self.pw._planets[dst].NumShips():
+                reward -= 10
+            target_planet = self.pw._planets[dst]
+            if len(self.pppq) > 1 and fleet_size > 0 and self.pw._planets[dst].Owner() == 2 and fleet_size + \
+                sum(f.Owner() == 1 and f.DestinationPlanet() == dst for f in self.pw._fleets) > target_planet.NumShips() + target_planet.GrowthRate() * self.distances[src][dst]:
+                reward += 10
+            if fleet_size > 0 and fleet_size > self.pw._planets[dst].NumShips() / 2:
+                reward += 10
+            elif fleet_size > 0 and fleet_size < self.pw._planets[dst].NumShips() / 2:
+                reward -= 10
 
         if done:
                 # Determine if agent and enemy are still alive.
@@ -129,10 +149,10 @@ class PlanetWarsEnv(gym.Env):
                 # Initialize win flag as False.
                 win = False
                 if not agent_alive:
-                    reward += -5 # Agent lost
+                    reward += -100 + (100 * (self.current_turn / 100)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets)# Agent lost
                     print("Loss")
                 elif not enemy_alive:
-                    reward += 5
+                    reward += 100 + (100 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets)
                     win = True
                     print("Win")
                 elif self.current_turn >= self.max_turns:
@@ -142,11 +162,11 @@ class PlanetWarsEnv(gym.Env):
                     enemy_total_ships = sum(p.NumShips() for p in self.pw._planets if p.Owner() == 2) + \
                                         sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2)
                     if agent_total_ships > enemy_total_ships:
-                        reward += 3  # Smaller bonus for timeout win.
+                        reward += 50  # Smaller bonus for timeout win.
                         win = True
                         print("Win")
                     elif agent_total_ships < enemy_total_ships:
-                        reward += -5
+                        reward += -50
                         print("Loss")
                 self.episode_results.append(win)
                 #obs = self._get_obs()
@@ -232,19 +252,19 @@ class PlanetWarsEnv(gym.Env):
         # Action is a tuple: (source, target, fraction_index)
         #src, dst, frac = action
         if dst == 23:
-            return 0
+            return 0, 0
         if src == dst:
-            return 0
+            return 0, 0
         # For player 1 use owner==1, for opponent use owner==2.
         valid_owner = 1 if player == 1 else 2
         if src < 0 or src >= self.num_planets:
-            return 0
+            return 0, 0
         planet = self.pw._planets[src]
         if planet.Owner() != valid_owner:
-            return 0
+            return 0, 0
         available = surplus
         if available <= 0:
-            return 0
+            return 0, 0
         # fraction index from 0 to 10: 0 means no ships; 10 means 100%
         num_ships = available
 
@@ -253,16 +273,16 @@ class PlanetWarsEnv(gym.Env):
 
         #num_ships = int(available * fraction)
         if num_ships < 1 or num_ships > planet._num_ships:
-            return 0
-
+            return 0, 0
+        remaining = 0
         future = self.futures[dst][-1]
         if future[1] == 0:
             num_ships = future[2] + 1
             if surplus < num_ships:
-                return 0
+                return 0, 0
             remaining = surplus - num_ships
         elif future[1] == 1:
-            return 0
+            return 0, 0
         else:
             if self.distances[src][dst] >= future[0]:
                 num_ships = min(surplus, future[2] + 1 + self.pw._planets[dst]._growth_rate * (self.distances[src][dst] - future[0]))
@@ -273,7 +293,7 @@ class PlanetWarsEnv(gym.Env):
         trip_length = self.pw.Distance(src, dst)
         new_fleet = Fleet(player, num_ships, src, dst, trip_length, trip_length)
         self.pw._fleets.append(new_fleet)
-        return 0
+        return remaining, num_ships
 
     def _opp_process_action(self, src, dst, surplus, player=2):
         # Action is a tuple: (source, target, fraction_index)
