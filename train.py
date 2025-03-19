@@ -51,14 +51,13 @@ class TensorboardCallback(BaseCallback):
         # Log scalar value (here a random variable)
         self.logger.record("Winrate over the last 10 games", sum(config.recent_wr) / 10)
         self.logger.record("Model updates", config.updated)
-        config.updated = 0
         return True
 
 
 
 
 def main():
-    env = PlanetWarsEnv(max_turns=1000, opponent_model=None, visualize=True)
+    env = PlanetWarsEnv(max_turns=1000, opponent_model=None, visualize=False)
 
 
     policy_kwargs = dict(
@@ -132,13 +131,13 @@ def main():
                 model.save(snapshot_file)
                 opponent_model = MaskablePPO.load(snapshot_file, env=env, gamma = 0.9995,device = "cpu")
                 env.opponent_model = opponent_model
-                config.updated = 1
+                config.updated += 1
                 print("Opponent updated to current model snapshot!")
             elif recent_win_rate < 0.30 and i != 0:
                 print("Catastrophic forgetting!\nPlayer updated to last snapshot!")
                 model = MaskablePPO.load(snapshot_file, env=env, gamma = 0.9995,device = "cpu")
                 env.opponent_model = opponent_model
-                config.updated = -1
+                #config.updated = -1
 
 
     model.save("ppo_planet_wars5")

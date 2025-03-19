@@ -184,7 +184,6 @@ class PlanetWarsEnv(gym.Env):
                 #info = {"action_mask": mask}
                 return np.zeros(360), reward, done, {}
         obs = self._get_obs(self.pw, player = 1)
-
         mask = self.mask
         info = {"action_mask": mask}
         current_score = (obs[8] + obs[9])
@@ -267,14 +266,6 @@ class PlanetWarsEnv(gym.Env):
         #src, dst, frac = action
         # For player 1 use owner==1, for opponent use owner==2.
         planet = self.pw._planets[src]
-        if planet._num_ships == 0:
-            print("no ships to send")
-            print(player)
-            return 0
-        if planet._owner != player:
-            print("invalid owner")
-            print(player)
-            return 0
 
         # Remove ships from the source planet and create a new fleet.
         planet.RemoveShips(1)
@@ -488,11 +479,11 @@ class PlanetWarsEnv(gym.Env):
         # 64: incoming enemy fleet count
         # 65: incoming fleet count advantage
         # 66-69: empty for now (should not impact performance)
+        all_data = np.array([])
         for i in range(5):
             planet = state._planets[i]
             pfutures = futures[i]
             growth = planet._growth_rate
-            all_data = np.array([])
             data = np.zeros(70)
 
             # one-hot owner
@@ -608,7 +599,7 @@ class PlanetWarsEnv(gym.Env):
                 all_data = np.concatenate((all_data, data))
             else:
                 all_data = np.concatenate((data, all_data))
-            obs = np.concatenate((obs, all_data))
+        obs = np.concatenate((obs, all_data))
         #print(obs)
 
         mask = np.ones(20)
