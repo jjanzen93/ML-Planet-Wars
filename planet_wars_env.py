@@ -23,10 +23,13 @@ class PlanetWarsEnv(gym.Env):
         self.episode_results = []
         self.last_planets_owned = 0
         self.last_planets_owned_opponent = 0
+        self.last_fleets_out = 0
         self.planets_lost = 0
         self.planets_opponent_lost = 0
+        self.fleets_lost = 0
         self.max_agent_planets = 0
         self.max_enemy_planets = 0
+        self.fleets_launched = 0
         self._load_map()
 
     def _load_map(self):
@@ -43,10 +46,13 @@ class PlanetWarsEnv(gym.Env):
         self.current_turn = 0
         self.last_planets_owned = 0
         self.last_planets_owned_opponent = 0
+        self.last_fleets_out = 0
         self.planets_lost = 0
         self.planets_opponent_lost = 0
+        self.fleets_lost = 0
         self.max_agent_planets = 0
         self.max_enemy_planets = 0
+        self.fleets_launched = 0
         self.last_score = self._compute_score()
 
         self.opponents_state = copy.deepcopy(self.pw)
@@ -133,19 +139,22 @@ class PlanetWarsEnv(gym.Env):
 
         reward = 0
         if dst != 23 and fleet_size > 0:
-            reward += 20 * ((self.pw._planets[dst]._growth_rate / fleet_size) - self.distances[src][dst])
-            if fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size > self.pw._planets[dst].NumShips():
-                reward += 10
-            elif fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size <= self.pw._planets[dst].NumShips():
-                reward -= 10
-            target_planet = self.pw._planets[dst]
-            if len(self.pppq) > 1 and fleet_size > 0 and self.pw._planets[dst].Owner() == 2 and fleet_size + \
-                sum(f.Owner() == 1 and f.DestinationPlanet() == dst for f in self.pw._fleets) > target_planet.NumShips() + target_planet.GrowthRate() * self.distances[src][dst]:
-                reward += 10
-            if fleet_size > 0 and fleet_size > self.pw._planets[dst].NumShips() / 2:
-                reward += 10
-            elif fleet_size > 0 and fleet_size < self.pw._planets[dst].NumShips() / 2:
-                reward -= 10
+            if self.pw._planets[dst].NumShips() > 0 and self.pw._planets[dst].Owner() == 0:
+                reward += (self.pw._planets[dst]._growth_rate / self.pw._planets[dst].NumShips()) * (1 / self.distances[src][dst])
+            elif self.pw._planets[dst].NumShips() > 0 and self.pw._planets[dst].Owner() == 2:
+                reward += (self.pw._planets[dst]._growth_rate / (self.pw._planets[dst].NumShips() * self.distances[src][dst])) * (1 / self.distances[src][dst])
+            #if fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size > self.pw._planets[dst].NumShips():
+            #    reward += 10
+            #elif fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size <= self.pw._planets[dst].NumShips():
+            #    reward -= 10
+            #target_planet = self.pw._planets[dst]
+            #if len(self.pppq) > 1 and fleet_size > 0 and self.pw._planets[dst].Owner() == 2 and fleet_size + \
+            #    sum(f.Owner() == 1 and f.DestinationPlanet() == dst for f in self.pw._fleets) > target_planet.NumShips() + target_planet.GrowthRate() * self.distances[src][dst]:
+            #    reward += 10
+            #if fleet_size > 0 and fleet_size > self.pw._planets[dst].NumShips() / 2:
+            #    reward += 10
+            #elif fleet_size > 0 and fleet_size < self.pw._planets[dst].NumShips() / 2:
+            #    reward -= 10
 
         if done:
                 # Determine if agent and enemy are still alive.
@@ -154,9 +163,9 @@ class PlanetWarsEnv(gym.Env):
                 # Initialize win flag as False.
                 win = False
                 if not agent_alive:
-                    reward += -100 + (100 * (self.current_turn / 100)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets)# Agent lost
+                    reward += -100 + (100 * (self.current_turn / 100)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets) - 20 * (self.fleets_lost / self.fleets_launched)# Agent lost
                 elif not enemy_alive:
-                    reward += 100 + (100 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets)
+                    reward += 100 + (100 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets) - 20 * (self.fleets_lost / self.fleets_launched)
                     win = True
                 elif self.current_turn >= self.max_turns:
                     # Timeout: determine win by total ships.
@@ -263,7 +272,7 @@ class PlanetWarsEnv(gym.Env):
         planet = self.pw._planets[src]
         if planet.Owner() != valid_owner:
             return 0, 0
-        available = surplus
+        available = surplus - 15
         if available <= 0:
             return 0, 0
         # fraction index from 0 to 10: 0 means no ships; 10 means 100%
@@ -293,6 +302,7 @@ class PlanetWarsEnv(gym.Env):
         planet.RemoveShips(num_ships)
         trip_length = self.pw.Distance(src, dst)
         new_fleet = Fleet(player, num_ships, src, dst, trip_length, trip_length)
+        self.fleets_launched += 1
         self.pw._fleets.append(new_fleet)
         return remaining, num_ships
 
@@ -464,6 +474,7 @@ class PlanetWarsEnv(gym.Env):
         enemy_growth = sum(p.GrowthRate() for p in enemy_planets)
         agent_fleet_ships = sum(f._num_ships for f in self.pw._fleets if f.Owner() == 1)
         enemy_fleet_ships = sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2)
+        num_agent_fleets = [f for f in self.pw._fleets if f.Owner() == 1]
         #Keeps track of the max number of planets acquired throughout the game, to make sure the bot doesn't just stay on one planet
         if self.max_agent_planets < len(agent_planets):
             self.max_agent_planets = len(agent_planets)
@@ -473,13 +484,17 @@ class PlanetWarsEnv(gym.Env):
         #this is to keep track of how many planets the player loses over the course of the game
         if len(agent_planets) < self.last_planets_owned:
             self.planets_lost += self.last_planets_owned - len(agent_planets)
+        self.last_fleets_out = len(num_agent_fleets) 
         #updates how many planets the player owns from last turn
         self.last_planets_owned = len(agent_planets)
         #this is to keep track of how many planets the enemy loses over the course of the game
         if len(enemy_planets) < self.last_planets_owned_opponent:
             self.planets_opponent_lost += self.last_planets_owned_opponent - len(enemy_planets)
+        if len(enemy_planets) >= self.last_planets_owned_opponent and len(num_agent_fleets) < self.last_fleets_out:
+            self.fleets_lost += self.last_fleets_out - len(num_agent_fleets)
         #updates how many planets the enemy owns from last turn
         self.last_planets_owned_opponent = len(enemy_planets)
+
 
         agent_total = len(agent_planets) + 0.1 * (agent_ships + agent_fleet_ships) + 0.5 * agent_growth
         enemy_total = len(enemy_planets) + 0.1 * (enemy_ships + enemy_fleet_ships) + 0.5 * enemy_growth

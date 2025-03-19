@@ -1,0 +1,18 @@
+INFO:root:
+Selector: High Level Ordering of Strategies
+| Sequence: Offensive Strategy
+| | Check: if_enemy_planet_snipable
+| | Action: like_agressive
+| Sequence: Hijack Plan
+| | Check: is_neutral_planet_under_attack
+| | Action: send_reinforcements_to_neutral_planet_under_attack
+| Sequence: Defensive Strategy
+| | Check: is_friendly_planet_under_attack
+| | Action: send_many_reinforcements_to_planets_under_attack
+| Sequence: Spread Strategy
+| | Check: if_neutral_planet_available
+| | Action: spread_many_to_closest_planet
+| Sequence: Conquest
+| | Check: have_largest_fleet
+| | Action: all_out_attack
+| Action: like_agressive

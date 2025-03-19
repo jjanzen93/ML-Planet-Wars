@@ -1,0 +1,1380 @@
+INFO:root:
+Selector: High Level Ordering of Strategies
+| Sequence: Defensive Strategy
+| | Check: if_been_attacked_without_reinforcement
+| | Action: defend_incoming_attacks
+| Selector: Spread and Offense Strategy
+| | Sequence: Attacking
+| | | Check: if_possible_victory
+| | | Action: attack_upgrade
+| | Sequence: Weakening
+| | | Check: if_enemy_planet_available
+| | | Action: attack_weakest_enemy_planet_upgrade
+| Sequence: Spread Strategy
+| | Check: if_neutral_planet_available
+| | Action: attack_cheapest_neutral
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Order:1 2 50.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Success
+DEBUG:root:Result: Sequence: Weakening -> Success
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 18 5.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 17 5.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 17 5.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 18 5.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 12 13.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:1 9 26.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 12 13.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 6 23.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 6 23.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:18 5 18.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:12 0 14.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:1 17 60.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Order:1 18 2.0
+DEBUG:root:Result: Action: defend_incoming_attacks -> Success
+DEBUG:root:Result: Sequence: Defensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Order:12 0 2.0
+DEBUG:root:Result: Action: defend_incoming_attacks -> Success
+DEBUG:root:Result: Sequence: Defensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:12 11 53.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Order:2 9 2.0
+DEBUG:root:Result: Action: defend_incoming_attacks -> Success
+DEBUG:root:Result: Sequence: Defensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:1 18 16.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Order:12 0 2.0
+DEBUG:root:Result: Action: defend_incoming_attacks -> Success
+DEBUG:root:Result: Sequence: Defensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Order:2 5 2.0
+DEBUG:root:Result: Action: defend_incoming_attacks -> Success
+DEBUG:root:Result: Sequence: Defensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:2 3 82.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Order:11 0 15.0
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Success
+DEBUG:root:Executing:Action: attack_upgrade
+DEBUG:root:Result: Action: attack_upgrade -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet_upgrade
+DEBUG:root:Result: Action: attack_weakest_enemy_planet_upgrade -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:1 4 82.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:12 15 60.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:11 16 60.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Defensive Strategy
+DEBUG:root:Executing:Check: if_been_attacked_without_reinforcement
+DEBUG:root:Result: Check: if_been_attacked_without_reinforcement -> Success
+DEBUG:root:Executing:Action: defend_incoming_attacks
+DEBUG:root:Result: Action: defend_incoming_attacks -> Failure
+DEBUG:root:Result: Sequence: Defensive Strategy -> Failure
+DEBUG:root:Executing:Selector: Spread and Offense Strategy
+DEBUG:root:Executing:Sequence: Attacking
+DEBUG:root:Executing:Check: if_possible_victory
+DEBUG:root:Result: Check: if_possible_victory -> Failure
+DEBUG:root:Result: Sequence: Attacking -> Failure
+DEBUG:root:Executing:Sequence: Weakening
+DEBUG:root:Executing:Check: if_enemy_planet_available
+DEBUG:root:Result: Check: if_enemy_planet_available -> Failure
+DEBUG:root:Result: Sequence: Weakening -> Failure
+DEBUG:root:Result: Selector: Spread and Offense Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: attack_cheapest_neutral
+DEBUG:root:Order:2 20 56.0
+DEBUG:root:Result: Action: attack_cheapest_neutral -> Success
+DEBUG:root:Result: Sequence: Spread Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+

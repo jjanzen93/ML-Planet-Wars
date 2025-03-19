@@ -8,6 +8,10 @@ from opponent_bots import aggressive_bot
 from opponent_bots import easy_bot
 from opponent_bots import production_bot
 from opponent_bots import spread_bot
+import s_Guerrero_PantojaMalik as bt_bot1
+import s_HanChen as bt_bot2
+import s_LinYe as bt_bot3
+import s_MojarroHiggins as bt_bot4
 from sb3_contrib.common.wrappers import ActionMasker
 from sb3_contrib.ppo_mask import MaskablePPO
 
@@ -40,8 +44,8 @@ def main():
     model = MaskablePPO("MlpPolicy", env, verbose=1, gamma = 0.9995,device = "cpu", tensorboard_log="./ppo_multiagent_tensorboard/")
     model.save("multi_ppo_untrained")
     #opponent_model = MaskablePPO.load("multi_ppo_untrained", env=env, gamma = 0.9995,device = "cpu")
-    opponent_list = [easy_bot.Easy_Bot(), production_bot.Production_Bot(), aggressive_bot.Aggressive_Bot(), defensive_bot.Defensive_Bot(), spread_bot.Spread_Bot()]
-    opponent_model = random.choice(opponent_list)
+    opponent_list = [easy_bot.Easy_Bot(), production_bot.Production_Bot(), aggressive_bot.Aggressive_Bot(), defensive_bot.Defensive_Bot(), spread_bot.Spread_Bot(), bt_bot1.bt_bot.Bt_Bot(), bt_bot2.bt_bot.Bt_Bot(), bt_bot3.bt_bot.Bt_Bot(), bt_bot4.bt_bot.Bt_Bot()]
+    opponent_model = bt_bot4.bt_bot.Bt_Bot()
     env.opponent_model = opponent_model
     total_timesteps = 10000000
     timesteps_per_iter = 50000
@@ -93,7 +97,7 @@ def main():
             if recent_win_rate >= 0.80:
                 snapshot_file = "snapshot_model.zip"
                 model.save(snapshot_file)
-                opponent_model = PPO.load(snapshot_file, env=env)
+                opponent_model = MaskablePPO.load(snapshot_file, env=env)
                 env.opponent_model = opponent_model
                 print("Opponent updated to current model snapshot!")
 

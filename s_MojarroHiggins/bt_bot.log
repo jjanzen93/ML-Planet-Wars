@@ -1,0 +1,2351 @@
+INFO:root:
+Selector: High Level Ordering of Strategies
+| Sequence: Early Populating Strategy
+| | Check: CloseOccupation
+| | Action: SendToBestNeutralPlanet
+| Sequence: Time to Steal
+| | Check: IsStealable
+| | Action: StealPlanet
+| Sequence: Defend My Planets
+| | Check: IsDefendable
+| | Action: Reinforce
+| Sequence: Offensive Strategy
+| | Check: have_largest_fleet
+| | Action: attack_weakest_enemy_planet
+| Sequence: Spread Strategy
+| | Check: if_neutral_planet_available
+| | Action: spread_to_weakest_neutral_planet
+| Action: attack_weakest_enemy_planet
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:1 20 8.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Order:1 5 75.0
+DEBUG:root:Result: Action: StealPlanet -> Success
+DEBUG:root:Result: Sequence: Time to Steal -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:1 6 5.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:20 3 13.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Order:1 6 17.0
+DEBUG:root:Result: Action: Reinforce -> Success
+DEBUG:root:Result: Sequence: Defend My Planets -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Order:1 6 18.0
+DEBUG:root:Result: Action: StealPlanet -> Success
+DEBUG:root:Result: Sequence: Time to Steal -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Order:5 6 28.0
+DEBUG:root:Result: Action: StealPlanet -> Success
+DEBUG:root:Result: Sequence: Time to Steal -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:5 19 8.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:5 4 13.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:1 2 135.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Sequence: Offensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:20 4 101.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Sequence: Offensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Order:1 5 22.0
+DEBUG:root:Result: Action: StealPlanet -> Success
+DEBUG:root:Result: Sequence: Time to Steal -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:5 10 39.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:6 9 39.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:3 5 73.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Sequence: Offensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:1 5 79.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Sequence: Offensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:20 5 75.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Sequence: Offensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:6 5 60.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Sequence: Offensive Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Order:2 9 43.0
+DEBUG:root:Result: Action: StealPlanet -> Success
+DEBUG:root:Result: Sequence: Time to Steal -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Success
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:5 0 62.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:5 19 100.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:1 22 47.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Order:2 9 2.0
+DEBUG:root:Result: Action: StealPlanet -> Success
+DEBUG:root:Result: Sequence: Time to Steal -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:2 21 47.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:9 13 48.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Failure
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Failure
+DEBUG:root:Executing:Sequence: Time to Steal
+DEBUG:root:Executing:Check: IsStealable
+DEBUG:root:Result: Check: IsStealable -> Success
+DEBUG:root:Executing:Action: StealPlanet
+DEBUG:root:Result: Action: StealPlanet -> Failure
+DEBUG:root:Result: Sequence: Time to Steal -> Failure
+DEBUG:root:Executing:Sequence: Defend My Planets
+DEBUG:root:Executing:Check: IsDefendable
+DEBUG:root:Result: Check: IsDefendable -> Success
+DEBUG:root:Executing:Action: Reinforce
+DEBUG:root:Result: Action: Reinforce -> Failure
+DEBUG:root:Result: Sequence: Defend My Planets -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Check: have_largest_fleet
+DEBUG:root:Result: Check: have_largest_fleet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Early Populating Strategy
+DEBUG:root:Executing:Check: CloseOccupation
+DEBUG:root:Result: Check: CloseOccupation -> Success
+DEBUG:root:Executing:Action: SendToBestNeutralPlanet
+DEBUG:root:Order:10 14 48.0
+DEBUG:root:Result: Action: SendToBestNeutralPlanet -> Success
+DEBUG:root:Result: Sequence: Early Populating Strategy -> Success
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
+DEBUG:root:Finish turn
+
