@@ -81,10 +81,10 @@ class PlanetWarsEnv(gym.Env):
         if new_surplus:
             heapq.heappush(self.pppq, (new_surplus * -1, src))
         done = False
-        if self.opponent_model != None:
-            while (not self.pppq) and (not done):
-                # q empty, no more moves to make.
-                # make opponents moves
+        while (not self.pppq) and (not done):
+            # q empty, no more moves to make.
+            # make opponents moves
+            if self.opponent_model != None:
                 try:
                     self.opponent_model.do_turn(self.pw)
                     self._simulate_turn()
@@ -101,10 +101,10 @@ class PlanetWarsEnv(gym.Env):
                     self._simulate_turn()
                     self.current_turn += 1
                     done = self._check_done()
-        else:
-            self._simulate_turn()
-            self.current_turn += 1
-            done = self._check_done()
+            else:
+                self._simulate_turn()
+                self.current_turn += 1
+                done = self._check_done()
             
 
             # Check for terminal condition (one side is eliminated or max_turns reached)
@@ -133,7 +133,7 @@ class PlanetWarsEnv(gym.Env):
 
         reward = 0
         if dst != 23 and fleet_size > 0:
-            reward += 20 * (self.pw._planets[dst]._growth_rate / self.pw._planets[dst].NumShips() - self.distances[src][dst])
+            reward += 20 * ((self.pw._planets[dst]._growth_rate / fleet_size) - self.distances[src][dst])
             if fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size > self.pw._planets[dst].NumShips():
                 reward += 10
             elif fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size <= self.pw._planets[dst].NumShips():
