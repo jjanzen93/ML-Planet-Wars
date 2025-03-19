@@ -41,7 +41,7 @@ def main():
     model.save("multi_ppo_untrained")
     #opponent_model = MaskablePPO.load("multi_ppo_untrained", env=env, gamma = 0.9995,device = "cpu")
     opponent_list = [easy_bot.Easy_Bot(), production_bot.Production_Bot(), aggressive_bot.Aggressive_Bot(), defensive_bot.Defensive_Bot(), spread_bot.Spread_Bot()]
-    opponent_model = spread_bot.Spread_Bot()
+    opponent_model = random.choice(opponent_list)
     env.opponent_model = opponent_model
     total_timesteps = 10000000
     timesteps_per_iter = 50000

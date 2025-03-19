@@ -81,25 +81,30 @@ class PlanetWarsEnv(gym.Env):
         if new_surplus:
             heapq.heappush(self.pppq, (new_surplus * -1, src))
         done = False
-        while (not self.pppq) and (not done):
-            # q empty, no more moves to make.
-            # make opponents moves
-            try:
-                self.opponent_model.do_turn(self.pw)
-                self._simulate_turn()
-                self.current_turn += 1
-                done = self._check_done()
-            except:
-                while self.oppq:
-                    opp_obs, opp_src, opp_surplus = self._get_opp_obs()
-                    opp_action, _ = self.opponent_model.predict(opp_obs, deterministic=False)
-                    #print(f"normal dst: {dst}\nopp action: {opp_action}")
-                    new_surplus = self._opp_process_action(opp_src, opp_action, opp_surplus, player=2)
-                    if new_surplus:
-                        heapq.heappush(self.oppq, (opp_surplus * -1, opp_src))
-                self._simulate_turn()
-                self.current_turn += 1
-                done = self._check_done()
+        if self.opponent_model != None:
+            while (not self.pppq) and (not done):
+                # q empty, no more moves to make.
+                # make opponents moves
+                try:
+                    self.opponent_model.do_turn(self.pw)
+                    self._simulate_turn()
+                    self.current_turn += 1
+                    done = self._check_done()
+                except:
+                    while self.oppq:
+                        opp_obs, opp_src, opp_surplus = self._get_opp_obs()
+                        opp_action, _ = self.opponent_model.predict(opp_obs, deterministic=False)
+                        #print(f"normal dst: {dst}\nopp action: {opp_action}")
+                        new_surplus = self._opp_process_action(opp_src, opp_action, opp_surplus, player=2)
+                        if new_surplus:
+                            heapq.heappush(self.oppq, (opp_surplus * -1, opp_src))
+                    self._simulate_turn()
+                    self.current_turn += 1
+                    done = self._check_done()
+        else:
+            self._simulate_turn()
+            self.current_turn += 1
+            done = self._check_done()
             
 
             # Check for terminal condition (one side is eliminated or max_turns reached)
@@ -128,7 +133,7 @@ class PlanetWarsEnv(gym.Env):
 
         reward = 0
         if dst != 23 and fleet_size > 0:
-            reward += 20 * (self.pw._planets[dst]._growth_rate / (self.pw._planets[dst].NumShips() + self.distances[src][dst]))
+            reward += 20 * (self.pw._planets[dst]._growth_rate / self.pw._planets[dst].NumShips() - self.distances[src][dst])
             if fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size > self.pw._planets[dst].NumShips():
                 reward += 10
             elif fleet_size > 0 and self.pw._planets[dst].Owner() == 0 and fleet_size <= self.pw._planets[dst].NumShips():
@@ -150,11 +155,9 @@ class PlanetWarsEnv(gym.Env):
                 win = False
                 if not agent_alive:
                     reward += -100 + (100 * (self.current_turn / 100)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets)# Agent lost
-                    print("Loss")
                 elif not enemy_alive:
                     reward += 100 + (100 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets)
                     win = True
-                    print("Win")
                 elif self.current_turn >= self.max_turns:
                     # Timeout: determine win by total ships.
                     agent_total_ships = sum(p.NumShips() for p in self.pw._planets if p.Owner() == 1) + \
@@ -164,10 +167,8 @@ class PlanetWarsEnv(gym.Env):
                     if agent_total_ships > enemy_total_ships:
                         reward += 50  # Smaller bonus for timeout win.
                         win = True
-                        print("Win")
                     elif agent_total_ships < enemy_total_ships:
                         reward += -50
-                        print("Loss")
                 self.episode_results.append(win)
                 #obs = self._get_obs()
                 #mask = self.mask
