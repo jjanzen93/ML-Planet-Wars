@@ -2,10 +2,12 @@ from stable_baselines3 import PPO
 from planet_wars_env import PlanetWarsEnv
 import matplotlib.pyplot as plt
 import time
+import random
 from opponent_bots import defensive_bot
 from opponent_bots import aggressive_bot
 from opponent_bots import easy_bot
 from opponent_bots import production_bot
+from opponent_bots import spread_bot
 from sb3_contrib.common.wrappers import ActionMasker
 from sb3_contrib.ppo_mask import MaskablePPO
 
@@ -38,7 +40,8 @@ def main():
     model = MaskablePPO("MlpPolicy", env, verbose=1, gamma = 0.9995,device = "cpu", tensorboard_log="./ppo_multiagent_tensorboard/")
     model.save("multi_ppo_untrained")
     #opponent_model = MaskablePPO.load("multi_ppo_untrained", env=env, gamma = 0.9995,device = "cpu")
-    opponent_model = aggressive_bot.Aggressive_Bot()
+    opponent_list = [easy_bot.Easy_Bot(), production_bot.Production_Bot(), aggressive_bot.Aggressive_Bot(), defensive_bot.Defensive_Bot(), spread_bot.Spread_Bot()]
+    opponent_model = spread_bot.Spread_Bot()
     env.opponent_model = opponent_model
     total_timesteps = 10000000
     timesteps_per_iter = 50000

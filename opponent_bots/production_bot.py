@@ -15,7 +15,7 @@ class Production_Bot():
         my_planets = iter(sorted(state.EnemyPlanets(), key=lambda p: p.NumShips(), reverse=True))
 
         target_planets = [planet for planet in state.NotEnemyPlanets()
-                        if not any(fleet.DestinationPlanet() == planet.Owner() for fleet in state.EnemyFleets())]
+                        if not any(fleet.DestinationPlanet() == planet.PlanetID() for fleet in state.EnemyFleets())]
         target_planets = iter(sorted(target_planets, key=lambda p: p.NumShips(), reverse=True))
 
         try:
@@ -26,10 +26,10 @@ class Production_Bot():
                     required_ships = target_planet.NumShips() + 1
                 else:
                     required_ships = target_planet.NumShips() + \
-                                    state.Distance(my_planet.Owner(), target_planet.Owner()) * target_planet.GrowthRate() + 1
+                                    state.Distance(my_planet.PlanetID(), target_planet.PlanetID()) * target_planet.GrowthRate() + 1
 
                 if my_planet.NumShips() > required_ships:
-                    state.IssueOrder(my_planet.Owner(), target_planet.Owner(), required_ships)
+                    state.IssueOrder(my_planet.PlanetID(), target_planet.PlanetID(), required_ships)
                     my_planet = next(my_planets)
                     target_planet = next(target_planets)
                 else:

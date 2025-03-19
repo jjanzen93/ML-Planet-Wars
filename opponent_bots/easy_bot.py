@@ -20,14 +20,14 @@ class Easy_Bot():
         strongest_planet = max(state.EnemyPlanets(), key=lambda p: p.NumShips(), default=None)
 
         # (3) Find the weakest enemy or neutral planet.
-        weakest_planet = min(state.NotMyPlanets(), key=lambda p: p.NumShips(), default=None)
+        weakest_planet = min(state.NotEnemyPlanets(), key=lambda p: p.NumShips(), default=None)
 
         if not strongest_planet or not weakest_planet:
             # No legal source or destination
             return
 
         # (4) Send half the ships from my strongest planet to the weakest planet that I do not own.
-        state.IssueOrder(strongest_planet.Owner(), weakest_planet.Owner(), strongest_planet.NumShips()/2)
+        state.IssueOrder(strongest_planet.PlanetID(), weakest_planet.PlanetID(), int(strongest_planet.NumShips()/2))
 
 
 if __name__ == '__main__':

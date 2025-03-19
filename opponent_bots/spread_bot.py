@@ -6,17 +6,17 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
-from planet_wars import PlanetWars, issue_order, finish_turn
+import PlanetWars
 
 class Spread_Bot():
     def __init__(self):
         pass
-    def spread(state):
-        my_planets = iter(sorted(state.my_planets(), key=lambda p: p.num_ships))
+    def spread(self, state):
+        my_planets = iter(sorted(state.EnemyPlanets(), key=lambda p: p.NumShips()))
 
-        neutral_planets = [planet for planet in state.neutral_planets()
-                        if not any(fleet.destination_planet == planet.ID for fleet in state.my_fleets())]
-        neutral_planets.sort(key=lambda p: p.num_ships)
+        neutral_planets = [planet for planet in state.NeutralPlanets()
+                        if not any(fleet.DestinationPlanet() == planet.PlanetID() for fleet in state.EnemyFleets())]
+        neutral_planets.sort(key=lambda p: p.NumShips())
 
         target_planets = iter(neutral_planets)
 
@@ -24,10 +24,10 @@ class Spread_Bot():
             my_planet = next(my_planets)
             target_planet = next(target_planets)
             while True:
-                required_ships = target_planet.num_ships + 1
+                required_ships = target_planet.NumShips() + 1
 
-                if my_planet.num_ships > required_ships:
-                    issue_order(state, my_planet.ID, target_planet.ID, required_ships)
+                if my_planet.NumShips() > required_ships:
+                    state.IssueOrder(my_planet.PlanetID(), target_planet.PlanetID(), required_ships)
                     my_planet = next(my_planets)
                     target_planet = next(target_planets)
                 else:
@@ -37,12 +37,12 @@ class Spread_Bot():
             return
 
 
-    def attack(state):
-        my_planets = iter(sorted(state.my_planets(), key=lambda p: p.num_ships))
+    def attack(self, state):
+        my_planets = iter(sorted(state.EnemyPlanets(), key=lambda p: p.NumShips()))
 
-        enemy_planets = [planet for planet in state.enemy_planets()
-                        if not any(fleet.destination_planet == planet.ID for fleet in state.my_fleets())]
-        enemy_planets.sort(key=lambda p: p.num_ships)
+        enemy_planets = [planet for planet in state.MyPlanets()
+                        if not any(fleet.DestinationPlanet() == planet.PlanetID() for fleet in state.EnemyFleets())]
+        enemy_planets.sort(key=lambda p: p.NumShips())
 
         target_planets = iter(enemy_planets)
 
@@ -50,11 +50,11 @@ class Spread_Bot():
             my_planet = next(my_planets)
             target_planet = next(target_planets)
             while True:
-                required_ships = target_planet.num_ships + \
-                                    state.distance(my_planet.ID, target_planet.ID) * target_planet.growth_rate + 1
+                required_ships = target_planet.NumShips() + \
+                                    state.Distance(my_planet.PlanetID(), target_planet.PlanetID()) * target_planet.GrowthRate() + 1
 
-                if my_planet.num_ships > required_ships:
-                    issue_order(state, my_planet.ID, target_planet.ID, required_ships)
+                if my_planet.NumShips() > required_ships:
+                    state.IssueOrder(my_planet.PlanetID(), target_planet.PlanetID(), required_ships)
                     my_planet = next(my_planets)
                     target_planet = next(target_planets)
                 else:
@@ -64,9 +64,9 @@ class Spread_Bot():
             return
 
 
-    def do_turn(state):
-        Spread_Bot.spread(state)
-        Spread_Bot.attack(state)
+    def do_turn(self, state):
+        self.spread(state)
+        self.attack(state)
 
 
 if __name__ == '__main__':
