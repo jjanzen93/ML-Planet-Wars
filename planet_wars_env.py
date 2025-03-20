@@ -1,14 +1,15 @@
-import gym
-from gym import spaces
+import gymnasium as gym
+from gymnasium import spaces
 import numpy as np
 import random
 from PlanetWars import PlanetWars
 from PlanetWars import Fleet
+from map_generator import generate_map
 
 class PlanetWarsEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, max_turns=1000, opponent_model=None, visualize=False):
+    def __init__(self, max_turns=1000, opponent_model=None, map_size=23, single_map=False, visualize=False):
         super(PlanetWarsEnv, self).__init__()
         self.max_turns = max_turns
         self.opponent_model = opponent_model  #starts out nulll then switches to copy
@@ -25,19 +26,25 @@ class PlanetWarsEnv(gym.Env):
         self.planets_opponent_lost = 0
         self.max_agent_planets = 0
         self.max_enemy_planets = 0
+        self.owned = [1]
+        self.src = 1
+
+        self.map_size = map_size
+        self.single_map = single_map
+        if single_map:
+            self.map_data = generate_map(self.map_size)
         self._load_map()
 
     def _load_map(self):
-        map_index = random.randint(1, 100) #maybe change to a map generator function??
-        with open(f"maps/map{map_index}.txt", "r") as f:
-            map_data = f.read()
+        if not self.single_map:
+            map_data = generate_map(self.map_size)
+        else: map_data = self.map_data
         self.pw = PlanetWars(map_data)
         self.num_planets = len(self.pw._planets)
-        # observation: flatten each planet’s features: [x, y, owner, num_ships, growth_rate]
-        self.observation_dim = self.num_planets * 5
+        self.observation_dim = self.num_planets*4 + (3)
         self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(self.observation_dim,), dtype=np.float32)
-        # action: (source_planet, target_planet, fraction_index [0..10])
-        self.action_space = spaces.MultiDiscrete([self.num_planets, self.num_planets, 11]) #chunked % of troops SHOULD BE IMPROVED
+        #self.action_space = spaces.MultiDiscrete([self.num_planets+1, 101])
+        self.action_space = spaces.Discrete(self.num_planets+1)
         self.current_turn = 0
         self.last_planets_owned = 0
         self.last_planets_owned_opponent = 0
@@ -45,67 +52,58 @@ class PlanetWarsEnv(gym.Env):
         self.planets_opponent_lost = 0
         self.max_agent_planets = 0
         self.max_enemy_planets = 0
-        self.last_score = self._compute_score()
+        self.last_score = self._compute_score((0,0,0))
 
-    def reset(self):
+    def reset(self, seed=42):
         self._load_map()
-        return self._get_obs()
-
-    def _flip_obs(self, obs):
-        # Reshape the flat observation to (num_planets, 5)
-        reshaped = obs.reshape(-1, 5).copy()
-        # Swap owner labels: 1 becomes 2 and 2 becomes 1.
-        mask_agent = reshaped[:, 2] == 1.0
-        mask_enemy = reshaped[:, 2] == 2.0
-        reshaped[mask_agent, 2] = 2.0
-        reshaped[mask_enemy, 2] = 1.0
-        return reshaped.flatten()
+        self.owned = [1]
+        self.src = 1
+        return self._get_obs(), seed
     
-    def step(self, action):
-        # Process the agent’s action (player 1)
-        valid_move = self._process_action(action, player=1)
+    def opp_move(self):
         
-        # Prepare observation for opponent: flip the owner labels.
-        obs = self._get_obs()  # original observation from the agent's perspective
         if self.opponent_model is not None:
             try:
                 self.opponent_model.do_turn(self.pw)
             except:
+                #obs = self._get_obs()
                 flipped_obs = self._flip_obs(obs)
                 opp_action, _ = self.opponent_model.predict(flipped_obs, deterministic=False)
                 self._process_action(opp_action, player=2)
-            #print(obs)
-            #print(flipped_obs)
-            #print("AGENT:", action)
-            #print("OPP:", opp_action)
-        # Simulate the turn: move fleets and resolve battles/growth
-        self._simulate_turn()
-        self.current_turn += 1
 
-        current_score = self._compute_score()
-        src, dst, frac = action
-        fraction = frac / 10.0
-        distance = self.pw.Distance(src, dst)
-        if self.pw._planets[dst].NumShips() + self.pw._planets[dst].GrowthRate() * distance > self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 2:
-            current_score -= 10
-        elif self.pw._planets[dst].NumShips() + self.pw._planets[dst].GrowthRate() * distance < self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 2:
-            current_score += 10
-        if self.pw._planets[dst].NumShips() > self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 0:
-            current_score -= 10
-        elif self.pw._planets[dst].NumShips() < self.pw._planets[src].NumShips() * fraction and self.pw._planets[src].Owner() == 0:
-            current_score += 10
-        if self.pw._planets[dst].GrowthRate() < 1 and self.pw._planets[dst].Owner != 1:
-            current_score -= 10
-        elif self.pw._planets[dst].GrowthRate() >= 1 and self.pw._planets[dst].Owner != 1:
-            current_score += 10
-        if valid_move:
-            current_score += 10
-        else:
-            current_score -= 10
+    def step(self, action):
+        #Hold all current planets in a queue. each step deque and make move from src. then check if queue is empty and make opponent move and requeue all planets owned.
+        ships = 0
+
+        #print("MOVE FOR ", self.src)
+        dst = action
+        #ships = int((pct/100)*self.pw._planets[self.src]._num_ships)
+        valid = True
+        if dst != self.map_size:
+            ships, valid = self.move_heuristic(self.src, dst)
+        
+            self._process_action(self.src, dst, ships, player=1)
+        
+        if len(self.owned) == 0:
+            self.opp_move()
+
+            #only simulate at the end
+            self._simulate_turn()
+            self.current_turn += 1
+
+            #re-queue
+            self.owned = [p._planet_id for p in self.pw._planets if p.Owner() == 1]
+        action = (self.src, dst, ships)
+        current_score = self._compute_score(action)
+        
         reward = current_score - self.last_score
+        if not valid: reward -= 0
         self.last_score = current_score
 
         # Check for terminal condition (one side is eliminated or max_turns reached)
+        if dst != self.map_size and ships > 0 and self.src != dst:
+            reward += (20 * self.pw._planets[dst]._growth_rate / (0.66 * self.pw._planets[dst].NumShips() + 1)) * (10 / self.pw.Distance(self.src, dst))
+            #print((20 * self.pw._planets[dst]._growth_rate / (0.66 * self.pw._planets[dst].NumShips()) + 1) * (10 / self.pw.Distance(self.src, dst)))
         done = self._check_done()
 
         # If game over, add additional terminal reward and record win/loss.
@@ -116,34 +114,53 @@ class PlanetWarsEnv(gym.Env):
             # Initialize win flag as False.
             win = False
             if not agent_alive:
-                reward += -100 + (50 * (100 / self.current_turn))# Agent lost
+                reward -= 1000 + (1000 * (self.current_turn / 100)) - 400 * (self.planets_lost / self.max_agent_planets) + 400 * (self.planets_opponent_lost / self.max_enemy_planets)
             elif not enemy_alive:
-                reward += 100 + (50 * (100 / self.current_turn)) - 40 * (self.planets_lost / self.max_agent_planets) + 40 * (self.planets_opponent_lost / self.max_enemy_planets) # Enemy eliminated
+                reward += 1000 + (1000 * (100 / self.current_turn)) - 400 * (self.planets_lost / self.max_agent_planets) + 400 * (self.planets_opponent_lost / self.max_enemy_planets) # Enemy eliminated
                 win = True
             elif self.current_turn >= self.max_turns:
                 # Timeout: determine win by total ships.
-                agent_total_ships = sum(p.NumShips() for p in self.pw._planets if p.Owner() == 1) + \
-                                    sum(f._num_ships for f in self.pw._fleets if f.Owner() == 1)
-                enemy_total_ships = sum(p.NumShips() for p in self.pw._planets if p.Owner() == 2) + \
-                                    sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2)
+                agent_total_ships = sum(p.NumShips() for p in self.pw._planets if p.Owner() == 1) + sum(f._num_ships for f in self.pw._fleets if f.Owner() == 1)
+                enemy_total_ships = sum(p.NumShips() for p in self.pw._planets if p.Owner() == 2) + sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2)
                 if agent_total_ships > enemy_total_ships:
-                    reward += 50 + 10 * (agent_total_ships / enemy_total_ships)  # Smaller bonus for timeout win.
+                    reward += 500 + 100 * (agent_total_ships / enemy_total_ships)  # Smaller bonus for timeout win.
                     win = True
                 elif agent_total_ships < enemy_total_ships:
-                    reward += -50 - 10 * (enemy_total_ships / agent_total_ships)
+                    reward += -500 + 100 * (enemy_total_ships / agent_total_ships)
             self.episode_results.append(win)
 
         if self.visualize:
             self.render()
-        
-        return self._get_obs(), reward, done, {}
+        #print(self.src, action, reward)
+        #print(valid, reward)
+        return self._get_obs(), reward, done, False, {}
 
-    def _process_action(self, action, player):
-        # Action is a tuple: (source, target, fraction_index)
-        src, dst, frac = action
-        
+    def move_heuristic(self, src, dst):
+        num_ships = 0
+        src_planet = self.pw._planets[src]
+        dst_planet = self.pw._planets[dst]
+        if self.pw._planets[dst].Owner() == 2:
+            delta = sum(f._num_ships for f in self.pw._fleets if f.Owner() == 1 and f.DestinationPlanet()==dst and f._turns_remaining < self.pw.Distance(src, dst)) - sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2 and f.DestinationPlanet()==dst and f._turns_remaining < self.pw.Distance(src, dst))
+            num_ships = dst_planet.NumShips() + dst_planet.GrowthRate() * self.pw.Distance(src, dst) - delta + 5
+
+        elif dst_planet.Owner() == 0:
+            delta = sum(f._num_ships for f in self.pw._fleets if f.Owner() == 1 and f.DestinationPlanet()==dst and f._turns_remaining < self.pw.Distance(src, dst)) - sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2 and f.DestinationPlanet()==dst and f._turns_remaining < self.pw.Distance(src, dst))
+            num_ships = dst_planet.NumShips() + 1 - delta
+        else:
+            num_ships = sum(f.NumShips() for f in self.pw.EnemyFleets() if f.DestinationPlanet() == dst) - (dst_planet.NumShips() + dst_planet.GrowthRate() * self.pw.Distance(src, dst) + 1)
+        valid = True
+        if num_ships > src_planet.NumShips():
+            num_ships = 0
+            valid = False
+        if num_ships < 0:
+            num_ships = 0
+        return num_ships, valid
+
+    def _process_action(self, src, dst, ships, player):
         if src == dst:
             return False
+        if dst == self.num_planets:
+            return True
         # For player 1 use owner==1, for opponent use owner==2.
         valid_owner = 1 if player == 1 else 2
         if src < 0 or src >= self.num_planets:
@@ -154,15 +171,14 @@ class PlanetWarsEnv(gym.Env):
         available = planet.NumShips()
         if available <= 0:
             return False
-        # fraction index from 0 to 10: 0 means no ships; 10 means 100%
-        fraction = frac / 10.0
-        num_ships = int(available * fraction)
-        if num_ships < 1:
+
+
+        if ships < 1:
             return False
         # Remove ships from the source planet and create a new fleet.
-        planet.RemoveShips(num_ships)
+        planet.RemoveShips(ships)
         trip_length = self.pw.Distance(src, dst)
-        new_fleet = Fleet(player, num_ships, src, dst, trip_length, trip_length)
+        new_fleet = Fleet(player, ships, src, dst, trip_length, trip_length)
         self.pw._fleets.append(new_fleet)
         return True
 
@@ -192,10 +208,12 @@ class PlanetWarsEnv(gym.Env):
             if planet.Owner() != 0:
                 planet.AddShips(planet.GrowthRate())
 
-    def _compute_score(self):
+    def _compute_score(self, action):
         # Compute a score from the agent’s perspective:
         # Score = (# agent planets) + 0.1*(agent ships, including fleets) + 0.5*(agent growth)
         # minus the corresponding enemy totals.
+
+        src, dst, num_ships = action
         agent_planets = [p for p in self.pw._planets if p.Owner() == 1]
         enemy_planets = [p for p in self.pw._planets if p.Owner() == 2]
         agent_ships = sum(p.NumShips() for p in agent_planets)
@@ -220,16 +238,21 @@ class PlanetWarsEnv(gym.Env):
             self.planets_opponent_lost += self.last_planets_owned_opponent - len(enemy_planets)
         #updates how many planets the enemy owns from last turn
         self.last_planets_owned_opponent = len(enemy_planets)
-
-        agent_total = len(agent_planets) + 0.1 * (agent_ships + agent_fleet_ships) + 0.5 * agent_growth
-        enemy_total = len(enemy_planets) + 0.1 * (enemy_ships + enemy_fleet_ships) + 0.5 * enemy_growth
+        
+        agent_total = len(agent_planets) + 0.3 * (agent_ships + agent_fleet_ships) + 0.5 * agent_growth
+        enemy_total = len(enemy_planets) + 0.3 * (enemy_ships + enemy_fleet_ships) + 0.5 * enemy_growth
         return agent_total - enemy_total
 
     def _get_obs(self):
-        # Return a flattened observation: for each planet [x, y, owner, num_ships, growth_rate].
-        obs = []
-        for planet in self.pw._planets:
-            obs.extend([planet.X(), planet.Y(), float(planet.Owner()), float(planet.NumShips()), float(planet.GrowthRate())])
+        if len(self.owned) == 0:
+            self.src = 0
+        else:
+            self.src = self.owned.pop(0)
+        obs = [self.src, self.pw._planets[self.src].NumShips(), self.pw._planets[self.src].Owner()] #
+        #print("OBS FOR", self.src, self.owned)
+        for planet in self.pw._planets: #ADD BINARY CAN CAP
+            delta = sum(f._num_ships for f in self.pw._fleets if f.Owner() == 1 and f.DestinationPlanet()==planet._planet_id) - sum(f._num_ships for f in self.pw._fleets if f.Owner() == 2 and f.DestinationPlanet()==planet._planet_id)
+            obs.extend([float(planet.Owner()), float(planet.NumShips()), float(planet.GrowthRate()), float(delta)]) #dist
         return np.array(obs, dtype=np.float32)
 
     def _check_done(self):
